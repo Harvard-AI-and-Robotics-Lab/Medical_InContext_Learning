@@ -1,0 +1,56 @@
+[
+  {
+    "id": "ddr_train_007-0269-000",
+    "image_name": "007-0269-000.jpg",
+    "image_path": "data/raw/DDR_extracted/DDR-dataset/DR_grading/train/007-0269-000.jpg",
+    "split": "train",
+    "official_split": "train",
+    "label": 0,
+    "label_name": "no_dr"
+  },
+  {
+    "id": "ddr_train_007-2288-100",
+    "image_name": "007-2288-100.jpg",
+    "image_path": "data/raw/DDR_extracted/DDR-dataset/DR_grading/train/007-2288-100.jpg",
+    "split": "train",
+    "official_split": "train",
+    "label": 1,
+    "label_name": "mild_npdr"
+  },
+  {
+    "id": "ddr_train_007-2901-100",
+    "image_name": "007-2901-100.jpg",
+    "image_path": "data/raw/DDR_extracted/DDR-dataset/DR_grading/train/007-2901-100.jpg",
+    "split": "train",
+    "official_split": "train",
+    "label": 2,
+    "label_name": "moderate_npdr"
+  },
+  {
+    "id": "ddr_train_007-4238-200",
+    "image_name": "007-4238-200.jpg",
+    "image_path": "data/raw/DDR_extracted/DDR-dataset/DR_grading/train/007-4238-200.jpg",
+    "split": "train",
+    "official_split": "train",
+    "label": 3,
+    "label_name": "severe_npdr"
+  },
+  {
+    "id": "ddr_train_007-6388-400",
+    "image_name": "007-6388-400.jpg",
+    "image_path": "data/raw/DDR_extracted/DDR-dataset/DR_grading/train/007-6388-400.jpg",
+    "split": "train",
+    "official_split": "train",
+    "label": 4,
+    "label_name": "proliferative_dr"
+  },
+  {
+    "id": "ddr_train_007-7926-601",
+    "image_name": "007-7926-601.jpg",
+    "image_path": "data/raw/DDR_extracted/DDR-dataset/DR_grading/train/007-7926-601.jpg",
+    "split": "train",
+    "official_split": "train",
+    "label": 5,
+    "label_name": "ungradable"
+  }
+]

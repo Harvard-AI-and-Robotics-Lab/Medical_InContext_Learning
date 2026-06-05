@@ -1,0 +1,44 @@
+name: vqamed2019_qwen36_noicl_fixed6_random6_final
+seed: 3407
+data_root: data/vqa
+output_root: outputs/final/vqamed2019_qwen36_noicl_fixed6_random6
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  model: qwen36-27b-vqamed2019
+  base_url: http://127.0.0.1:18301/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 512
+  seed: 3407
+  response_format: null
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 64
+  batch_delay: 0
+  image_max_side: null
+retrieval:
+  k: 6
+datasets:
+- vqamed2019
+methods:
+- zero_shot
+- fixed_random_6
+- random_icl
+manifest_json: data/vqa/vqamed2019/manifest.json
+fixed_exemplars_json: data/vqa/vqamed2019/fixed_exemplars_seed3407.json
+query_split: test
+vqa_system_prompt: ''
+vqa_query_template: 'You are a helpful radiology assistant. Given this radiology image, which can be a frontal chest X-ray, a single slice head or abdominal CT or MR image, provide a very short, concise answer, like to the following question: {question}'
+batch_size: 64
+zero_shot_batch_size: 64
+k: 6
+prompt_suffix: ''
+prompt_suffix_methods:
+- zero_shot
+- fixed_random_6
+- random_icl

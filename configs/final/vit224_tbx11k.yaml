@@ -1,0 +1,38 @@
+name: vit224_tbx11k_seed3407
+seed: 3407
+model_name: google/vit-base-patch16-224
+manifest_csv: manifests/tbx11k_train85_val15_officialval_test_seed3407.csv
+data_root: .
+output_dir: outputs/final/vit224_tbx11k_seed3407
+task: single
+image_size: 224
+batch_size: 128
+epochs: 200
+patience: 25
+min_epochs: 50
+num_workers: 8
+backbone_lr: 3.0e-05
+head_lr: 0.001
+weight_decay: 0.05
+warmup_epochs: 5
+max_grad_norm: 1.0
+selection_metric: accuracy
+
+command: >
+  python scripts/train_vit_classification.py
+  --manifest-csv manifests/tbx11k_train85_val15_officialval_test_seed3407.csv
+  --data-root .
+  --output-dir outputs/final/vit224_tbx11k_seed3407
+  --task single
+  --image-size 224
+  --batch-size 128
+  --epochs 200
+  --patience 25
+  --min-epochs 50
+  --num-workers 8
+  --seed 3407
+  --backbone-lr 3e-5
+  --head-lr 1e-3
+  --weight-decay 0.05
+  --warmup-epochs 5
+  --selection-metric accuracy

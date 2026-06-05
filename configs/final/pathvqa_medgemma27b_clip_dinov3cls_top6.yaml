@@ -1,0 +1,37 @@
+name: pathvqa_medgemma27b_clip_dinov3cls_top6_final
+seed: 3407
+data_root: data/vqa
+output_root: outputs/final/pathvqa_medgemma27b_clip_dinov3cls_top6
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  model: medgemma-27b-pathvqa
+  base_url: http://127.0.0.1:18203/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 512
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 64
+  batch_delay: 0
+  image_max_side: null
+retrieval:
+  k: 6
+datasets:
+- pathvqa
+methods:
+- rg_icl_dual_global_similarity
+manifest_json: data/vqa/pathvqa/manifest.json
+query_split: test
+batch_size: 64
+k: 6
+retrieval_features_dir: outputs/features_clip_dinov3cls_05_global_pathvqa/pathvqa/clip_dinov3cls05
+prompt_suffix: 'Return only one compact JSON object. Include "answer", "confidence" for confidence in the answer, and "evidence" of eight words max. No markdown, no extra text.'
+prompt_suffix_methods:
+- rg_icl_dual_global_similarity

@@ -1,0 +1,22 @@
+--extra-index-url https://download.pytorch.org/whl/cu126
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.36.0
+timm>=0.9.12
+openai>=1.6.0
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+scipy>=1.11.0
+Pillow>=10.0.0
+pyyaml>=6.0.1
+tqdm>=4.66.0
+nltk>=3.8.1
+rouge-score>=0.1.2
+matplotlib>=3.8.0
+seaborn>=0.13.0
+faiss-cpu>=1.7.4
+datasets>=2.16.0
+huggingface-hub>=0.20.0
+mistral-common==1.11.2
+vllm==0.17.0

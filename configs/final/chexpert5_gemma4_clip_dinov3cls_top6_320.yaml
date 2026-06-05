@@ -1,0 +1,50 @@
+name: chexpert5_gemma4_clip_dinov3cls_top6_320_final
+seed: 3407
+data_root: .
+output_root: outputs/final/chexpert5_gemma4_clip_dinov3cls_top6_320
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  model: gemma4-31b-final
+  base_url: http://127.0.0.1:18005/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 1024
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 128
+  batch_delay: 0
+  image_max_side: 320
+  image_quality: 95
+retrieval:
+  k: 6
+datasets:
+- chexpert
+methods:
+- rg_icl_dual_global_similarity
+manifest_csv: manifests/chexpert_official_split_320.csv
+fixed_exemplars_json: manifests/chexpert_fixed_exemplars_seed3407.json
+prompt_dataset_name: chexpert
+batch_size: 128
+zero_shot_batch_size: 128
+k: 6
+prompt_suffix: 'Output only one compact JSON object with exactly this schema: {"findings":{"atelectasis":{"present":false,"probability":0.0},
+  "cardiomegaly":{"present":false,"probability":0.0}, "consolidation":{"present":false,"probability":0.0},
+  "edema":{"present":false,"probability":0.0}, "pleural_effusion":{"present":false,"probability":0.0}},"evidence":"eight
+  words max"}. No markdown, no extra text.'
+retrieval_features_dir: outputs/features_clip_dinov3cls_05_global_chexpert_320_fast/chexpert/clip_dinov3cls05
+prompt_suffix_methods:
+- rg_icl_global_similarity
+- rg_icl_dual_global_similarity
+target_label_names:
+- atelectasis
+- cardiomegaly
+- consolidation
+- edema
+- pleural_effusion

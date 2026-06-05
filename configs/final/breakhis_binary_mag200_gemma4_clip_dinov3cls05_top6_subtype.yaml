@@ -1,0 +1,40 @@
+seed: 3407
+data_root: data/raw/BreaKHis_v1_extracted
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  model: gemma4-31b-final
+  base_url: http://127.0.0.1:18002/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 512
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 256
+  batch_delay: 0
+retrieval:
+  k: 6
+datasets:
+- breakhis_binary
+methods:
+- rg_icl_global_similarity
+manifest_csv: manifests/breakhis_binary_patient_split_seed3407_mag200.csv
+prompt_dataset_name: breakhis_binary
+batch_size: 256
+k: 6
+prompt_suffix: 'Output only one compact JSON object. Include "label" ("benign" or
+  "malignant"), "subtype" (one of: adenosis, fibroadenoma, phyllodes_tumor, tubular_adenoma,
+  ductal_carcinoma, lobular_carcinoma, mucinous_carcinoma, papillary_carcinoma), "confidence"
+  for confidence in the chosen binary diagnosis, "probability" for probability of
+  malignant, and "evidence" of eight words max. No markdown, no extra text.'
+prompt_suffix_methods:
+- rg_icl_global_similarity
+name: breakhis_binary_mag200_gemma4_clip_dinov3cls05_top6_subtype
+output_root: outputs/final/breakhis_binary_mag200_gemma4_clip_dinov3cls05_top6_subtype
+retrieval_features_dir: outputs/features_clip_dinov3cls_05_global_breakhis_binary_mag200/breakhis_binary/clip_dinov3cls05

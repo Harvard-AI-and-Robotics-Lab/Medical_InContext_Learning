@@ -1,0 +1,39 @@
+name: ddr_qwen36_clip_top6_512_final
+seed: 3407
+data_root: .
+output_root: outputs/final/ddr_qwen36_clip_top6_512
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  model: qwen36-27b-final
+  base_url: http://127.0.0.1:18003/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 512
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 256
+  batch_delay: 0
+retrieval:
+  k: 6
+datasets:
+- ddr
+methods:
+- rg_icl_global_similarity
+manifest_csv: manifests/ddr_official_split_crop_pad_512.csv
+fixed_exemplars_json: manifests/ddr_fixed_exemplars_seed3407.json
+prompt_dataset_name: ddr
+retrieval_features_dir: outputs/features_clip_global_ddr_512/ddr/clip
+batch_size: 256
+k: 6
+prompt_suffix: Output only one compact JSON object. Include "label", "confidence"
+  for confidence in the chosen DR grade, "probabilities" as a distribution over all
+  six DDR grades, and "evidence" of eight words max. No markdown, no extra text.
+prompt_suffix_methods:
+- rg_icl_global_similarity

@@ -1,0 +1,28 @@
+label,group,model,accuracy,auc,sensitivity,specificity,precision,f1,brier,ece,n,cm,color,note,source_run,source_method
+"Qwen3.6
+No-ICL",Qwen3.6,Qwen3.6,0.7805212620027435,0.8510230495284575,0.8832684824902723,0.7245762711864406,0.6358543417366946,0.7394136807817588,0.1795031550068587,0.1279835390946503,729,"[[342,130],[30,227]]",#F1DCA7,JSON probability; temp=0.7/top_p=0.8.,classification_qwen36_27b_vllm_zero_shot_probability,zero_shot
+"Qwen3.6
+Fixed-6",Qwen3.6,Qwen3.6,0.6364883401920439,0.503940513091077,0.011673151750972763,0.9766949152542372,0.21428571428571427,0.022140221402214024,0.5831240054869685,0.5959670781893003,729,"[[461,11],[254,3]]",#F1DCA7,"Old protocol; included because requested, but not paper-comparable.",classification_qwen36_27b_vllm_clip_k6,fixed_random_6
+"Qwen3.6
+Random-6",Qwen3.6,Qwen3.6,0.3786008230452675,0.5557030271054542,0.9688715953307393,0.057203389830508475,0.35878962536023057,0.5236593059936908,0.5176809327846366,0.5319615912208505,729,"[[27,445],[8,249]]",#F1DCA7,Per-query random train references; verified train-only labels; temp=1; strong glaucoma bias.,classification_qwen36_27b_vllm_random6_temp1_nonthinking_b256,random_icl
+"Qwen3.6
+CLIP",Qwen3.6,Qwen3.6,0.9272976680384087,0.9736035085405262,0.9105058365758755,0.9364406779661016,0.8863636363636364,0.8982725527831094,0.059781344307270216,0.06115226337448559,729,"[[442,30],[23,234]]",#F5A623,CLIP top-6 with similarity/probability; temp=0.7/top_p=0.8.,classification_qwen36_27b_vllm_clip_k6_global_similarity,rg_icl_global_similarity
+"Qwen3.6
+CLIP+DINO",Qwen3.6,Qwen3.6,0.9465020576131687,0.9751904306535646,0.9299610894941635,0.9555084745762712,0.9192307692307692,0.9245647969052223,0.04748875171467763,0.032908093278463675,729,"[[451,21],[18,239]]",#F5A623,Current best VLM-ICL; temp=1; top-6 by 0.5 CLIP + 0.5 DINOv3 CLS.,classification_qwen36_27b_vllm_clip_dinov3cls05_k6_temp1_nonthinking_b256,rg_icl_dual_global_similarity
+"Gemma4
+No-ICL",Gemma4,Gemma4,0.757201646090535,0.8078834993075249,0.6809338521400778,0.798728813559322,0.6481481481481481,0.6641366223908919,0.1993338820301783,0.15887517146776406,729,"[[377,95],[82,175]]",#B7D8F0,JSON probability; temp=0.,classification_gemma4_31b_vllm_probability_clip_similarity,zero_shot
+"Gemma4
+Fixed-6",Gemma4,Gemma4,0.7873799725651578,0.8278457429268614,0.7859922178988327,0.788135593220339,0.6688741721854304,0.7227191413237924,0.17244855967078188,0.10576131687242794,729,"[[372,100],[55,202]]",#B7D8F0,Fixed random-6; JSON probability; temp=0.,classification_gemma4_31b_vllm_probability_clip_similarity,fixed_random_6
+"Gemma4
+Random-6",Gemma4,Gemma4,0.7174211248285323,0.7099765877464881,0.6147859922178989,0.7733050847457628,0.5962264150943396,0.6053639846743295,0.2329355281207133,0.17901234567901242,729,"[[365,107],[99,158]]",#B7D8F0,Per-query random train references; JSON probability; temp=1.,classification_gemma4_31b_vllm_random6_temp1_nonthinking_b256,random_icl
+"Gemma4
+CLIP",Gemma4,Gemma4,0.9245541838134431,0.9711592362988853,0.8793774319066148,0.9491525423728814,0.904,0.8915187376725839,0.06284636488340191,0.06227709190672158,729,"[[448,24],[31,226]]",#4F9BD9,CLIP top-6 with similarity/probability; temp=1.,classification_gemma4_31b_vllm_clip_k6_temp1_default_nonthinking,rg_icl_global_similarity
+"Gemma4
+DINOv3
+patch-mean",Gemma4,Gemma4,0.9259259259259259,0.9611925410538812,0.867704280155642,0.9576271186440678,0.9176954732510288,0.8920000000000001,0.06444787379972565,0.03518518518518517,729,"[[452,20],[34,223]]",#4F9BD9,DINOv3 patch-token mean top-6 with retrieval similarity/probability; temp=1.,classification_gemma4_31b_vllm_dinov3_patchmean_k6_temp1_nonthinking_b256,rg_icl_global_similarity
+"Gemma4
+CLIP+DINO",Gemma4,Gemma4,0.9327846364883402,0.9662171074325661,0.8754863813229572,0.9639830508474576,0.9297520661157025,0.9018036072144289,0.058057064471879284,0.05111111111111108,729,"[[455,17],[32,225]]",#4F9BD9,Temp=1; top-6 by 0.5 CLIP + 0.5 DINOv3 CLS.,classification_gemma4_31b_vllm_clip_dinov3cls05_k6_temp1_nonthinking_b256,rg_icl_dual_global_similarity
+"Gemma4
+LoRA SFT",Gemma4 SFT,Gemma4 LoRA,0.7352537722908093,0.8064820615973092,0.7470817120622568,0.7288135593220338,0.6,0.6655112651646448,,,729,"[[344,128],[65,192]]",#9C6ADE,"Gemma4 language-decoder LoRA, selected by best full-val accuracy at step 71.",legacy_outputs/gemma4_lora_json_label_span_fullval3e_acc_nobal_fast_uuid23_seed3407/step71_test_predictions_b4_metrics.json,step71_test
+"ResNet50
+Fine-tuned",Supervised,ResNet50,0.9766803840877915,0.9985161247774187,0.9922178988326849,0.9682203389830508,0.9444444444444444,0.967741935483871,0.017163217263081728,,729,"[[457,15],[2,255]]",#EF5350,ImageNet-pretrained ResNet50 fine-tuned on LAG train; test threshold 0.5.,resnet50_lag_512_seed3407,test_0p5

@@ -1,0 +1,38 @@
+name: vqa_rad_medgemma27b_clip_top6_final
+seed: 3407
+data_root: data/vqa
+output_root: outputs/final/vqa_rad_medgemma27b_clip_top6_refval_promptfix
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  model: medgemma-27b-vqa-rad
+  base_url: http://127.0.0.1:18403/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 512
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 64
+  batch_delay: 0
+  image_max_side: null
+retrieval:
+  k: 6
+datasets:
+- vqa_rad
+methods:
+- rg_icl_global_similarity
+manifest_json: data/vqa/vqa_rad/manifest_refval.json
+query_split: test
+batch_size: 64
+k: 6
+retrieval_features_dir: outputs/features_clip_global_vqa_rad_refval_promptfix/vqa_rad/clip
+retrieval_score_label: CLIP global similarity
+prompt_suffix: 'Return only one compact JSON object with exactly this schema: {"answer":"short answer","confidence":0.0,"evidence":"eight words max"}. No markdown, no extra text.'
+prompt_suffix_methods:
+- rg_icl_global_similarity

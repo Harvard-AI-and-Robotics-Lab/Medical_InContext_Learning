@@ -1,0 +1,51 @@
+name: tbx11k_medgemma27b_noicl_fixed6_random6_final
+seed: 3407
+data_root: .
+output_root: outputs/final/tbx11k_medgemma27b_noicl_fixed6_random6
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 512
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  batch_delay: 0
+  image_max_side: 512
+  image_quality: 95
+  model: medgemma-27b-final
+  base_url: http://127.0.0.1:18007/v1
+  parallel_requests: 128
+retrieval:
+  k: 6
+datasets:
+- tbx11k
+methods:
+- zero_shot
+- fixed_random_6
+- random_icl
+manifest_csv: manifests/tbx11k_train85_val15_officialval_test_seed3407.csv
+fixed_exemplars_json: manifests/tbx11k_fixed_exemplars_seed3407.json
+prompt_dataset_name: tbx11k
+batch_size: 128
+zero_shot_batch_size: 128
+k: 6
+target_label_names:
+- healthy
+- sick but non-TB
+- TB
+query_split: test
+prompt_suffix: 'Output only one compact JSON object. Include "label", "confidence"
+  for confidence in the chosen TBX11K class, "probabilities" as a distribution over
+  exactly these three classes: healthy, sick but non-TB, TB, and "evidence" of eight
+  words max. No markdown, no extra text.'
+prompt_suffix_methods:
+- zero_shot
+- fixed_random_6
+- random_icl

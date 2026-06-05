@@ -1,0 +1,25 @@
+name: extract_clip_global_slake
+seed: 3407
+data_root: data/vqa
+output_root: outputs
+features_root: outputs/features_clip_global_slake
+encoder:
+  name: clip
+  model_id: openai/clip-vit-large-patch14
+  device: cuda
+  batch_size: 64
+  image_size: 224
+  normalize: true
+  return_spatial: false
+retrieval:
+  method: global
+  k: 6
+  similarity_metric: cosine
+  exclude_query: true
+  exclude_test_set: true
+datasets:
+- slake
+methods:
+- rg_icl_global_similarity
+manifest_json: data/vqa/slake/manifest_en.json
+lang: en

@@ -1,0 +1,24 @@
+seed: 3407
+data_root: .
+output_root: outputs
+retrieval:
+  method: global
+  k: 6
+  similarity_metric: cosine
+  exclude_query: true
+  exclude_test_set: true
+datasets:
+- vqa_rad
+methods:
+- rg_icl_global_similarity
+manifest_csv: manifests/vqa_rad_official_split_512.csv
+name: extract_clip_global_vqa_rad_512
+features_root: outputs/features_clip_global_vqa_rad_512
+encoder:
+  name: clip
+  model_id: openai/clip-vit-large-patch14
+  device: cuda
+  batch_size: 64
+  image_size: 224
+  normalize: true
+  return_spatial: false

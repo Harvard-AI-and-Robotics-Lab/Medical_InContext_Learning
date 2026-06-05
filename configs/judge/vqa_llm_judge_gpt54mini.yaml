@@ -1,0 +1,27 @@
+name: vqa_llm_judge_gpt54mini
+prompt_path: configs/judge/vqa_llm_judge_prompt_v1.txt
+model: gpt-5.4-mini-2026-03-17
+temperature: 0.0
+seed: 3407
+response_format:
+  type: json_object
+input_fields:
+  question: question
+  reference_answer: ground_truth_answer
+  predicted_answer: parsed.answer
+score_fields:
+  - semantic_accuracy
+  - completeness
+  - factuality
+  - conciseness
+raw_output_fields:
+  - raw_judge_response
+  - parsed_judge
+  - judge_model
+  - judge_temperature
+  - judge_seed
+  - latency_ms
+max_workers: 16
+max_retries: 5
+retry_delay_seconds: 5.0
+include_image: false

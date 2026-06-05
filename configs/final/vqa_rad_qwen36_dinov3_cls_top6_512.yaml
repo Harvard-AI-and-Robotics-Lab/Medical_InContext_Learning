@@ -1,0 +1,42 @@
+name: vqa_rad_qwen36_dinov3_cls_top6_512_final
+seed: 3407
+data_root: .
+output_root: outputs/final/vqa_rad_qwen36_dinov3_cls_top6_512
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  model: qwen36-27b-final
+  base_url: http://127.0.0.1:18003/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 512
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 128
+  batch_delay: 0
+  image_max_side: 512
+  image_quality: 95
+retrieval:
+  k: 6
+datasets:
+- vqa_rad
+methods:
+- rg_icl_global_similarity
+manifest_csv: manifests/vqa_rad_official_split_512.csv
+fixed_exemplars_json: manifests/vqa_rad_fixed_exemplars_seed3407.json
+prompt_dataset_name: vqa_rad
+batch_size: 64
+zero_shot_batch_size: 128
+k: 6
+query_split: test
+prompt_suffix: 'Return only one compact JSON object with exactly this schema: {"answer":"short
+  answer","confidence":0.0,"evidence":"eight words max"}. No markdown, no extra text.'
+retrieval_features_dir: outputs/features_dinov3_global_vqa_rad_512/vqa_rad/dinov3
+prompt_suffix_methods:
+- rg_icl_global_similarity

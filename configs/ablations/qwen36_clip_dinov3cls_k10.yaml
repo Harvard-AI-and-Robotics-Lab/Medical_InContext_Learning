@@ -1,0 +1,43 @@
+name: qwen36_clip_dinov3cls_k10_ablation
+seed: 3407
+data_root: data/LAG
+output_root: outputs/ablations/qwen36_clip_dinov3cls_k10
+output_file: predictions.json
+features_root: outputs/features
+
+inference:
+  client_backend: vllm
+  model: qwen36-27b-final
+  base_url: http://127.0.0.1:18001/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p:
+  max_tokens: 512
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 256
+  batch_delay: 0
+
+retrieval:
+  k: 10
+
+datasets:
+  - lag_project
+
+methods:
+  - rg_icl_dual_global_similarity
+
+manifest_csv: manifests/lag_manifest.csv
+fixed_exemplars_json: manifests/fixed_exemplars_seed3407.json
+prompt_dataset_name: lag
+retrieval_features_dir: outputs/features_clip_dinov3cls_05_global/lag_project/clip_dinov3cls05
+
+batch_size: 256
+k: 10
+prompt_suffix: 'Output only one compact JSON object. Include "label", "confidence" for confidence in the chosen label, "probability" for p_glaucoma, and "evidence" of eight words max. No markdown, no extra text.'
+prompt_suffix_methods:
+  - rg_icl_dual_global_similarity

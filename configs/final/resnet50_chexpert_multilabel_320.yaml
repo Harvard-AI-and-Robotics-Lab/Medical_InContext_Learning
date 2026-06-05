@@ -1,0 +1,14 @@
+name: resnet50_chexpert_multilabel_320_seed3407
+seed: 3407
+manifest_csv: manifests/chexpert_official_split_320.csv
+data_root: .
+output_dir: outputs/final/resnet50_chexpert_multilabel_320_seed3407
+image_size: 320
+batch_size: 64
+epochs: 20
+patience: 5
+num_workers: 8
+backbone_lr: 3.0e-05
+head_lr: 0.001
+weight_decay: 0.0001
+selection_metric: macro_auc

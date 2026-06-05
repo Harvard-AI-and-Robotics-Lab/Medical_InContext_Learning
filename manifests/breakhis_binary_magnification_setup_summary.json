@@ -1,0 +1,90 @@
+{
+  "40": {
+    "manifest": "manifests/breakhis_binary_patient_split_seed3407_mag40.csv",
+    "fixed_exemplars": "manifests/breakhis_binary_fixed_exemplars_seed3407_mag40.json",
+    "features": "outputs/features_clip_global_breakhis_binary_mag40/breakhis_binary/clip",
+    "counts": {
+      "benign": {
+        "test": 62,
+        "train": 409,
+        "val": 154
+      },
+      "malignant": {
+        "test": 223,
+        "train": 962,
+        "val": 185
+      }
+    },
+    "patients_by_split": {
+      "test": 11,
+      "train": 49,
+      "val": 10
+    }
+  },
+  "100": {
+    "manifest": "manifests/breakhis_binary_patient_split_seed3407_mag100.csv",
+    "fixed_exemplars": "manifests/breakhis_binary_fixed_exemplars_seed3407_mag100.json",
+    "features": "outputs/features_clip_global_breakhis_binary_mag100/breakhis_binary/clip",
+    "counts": {
+      "benign": {
+        "test": 60,
+        "train": 422,
+        "val": 162
+      },
+      "malignant": {
+        "test": 248,
+        "train": 1018,
+        "val": 171
+      }
+    },
+    "patients_by_split": {
+      "test": 11,
+      "train": 49,
+      "val": 10
+    }
+  },
+  "200": {
+    "manifest": "manifests/breakhis_binary_patient_split_seed3407_mag200.csv",
+    "fixed_exemplars": "manifests/breakhis_binary_fixed_exemplars_seed3407_mag200.json",
+    "features": "outputs/features_clip_global_breakhis_binary_mag200/breakhis_binary/clip",
+    "counts": {
+      "benign": {
+        "test": 64,
+        "train": 412,
+        "val": 147
+      },
+      "malignant": {
+        "test": 228,
+        "train": 1010,
+        "val": 152
+      }
+    },
+    "patients_by_split": {
+      "test": 11,
+      "train": 49,
+      "val": 10
+    }
+  },
+  "400": {
+    "manifest": "manifests/breakhis_binary_patient_split_seed3407_mag400.csv",
+    "fixed_exemplars": "manifests/breakhis_binary_fixed_exemplars_seed3407_mag400.json",
+    "features": "outputs/features_clip_global_breakhis_binary_mag400/breakhis_binary/clip",
+    "counts": {
+      "benign": {
+        "test": 67,
+        "train": 373,
+        "val": 148
+      },
+      "malignant": {
+        "test": 198,
+        "train": 901,
+        "val": 133
+      }
+    },
+    "patients_by_split": {
+      "test": 11,
+      "train": 49,
+      "val": 10
+    }
+  }
+}

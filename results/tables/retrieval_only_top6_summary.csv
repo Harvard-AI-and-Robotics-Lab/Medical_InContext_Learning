@@ -1,0 +1,19 @@
+Retrieval,Rule,Acc,AUC_pos_fraction,Sens,Spec,CM,N,FeatureDir
+CLIP L/14 global,strict >=4/6,0.9300,0.9840,0.8327,0.9831,"[[464,8],[43,214]]",729,legacy_outputs/features_clip_global_2141/lag_project/clip
+CLIP L/14 global,tie-positive >=3/6,0.9369,0.9840,0.9105,0.9513,"[[449,23],[23,234]]",729,legacy_outputs/features_clip_global_2141/lag_project/clip
+DINOv3 CLS global,strict >=4/6,0.8916,0.9611,0.7160,0.9873,"[[466,6],[73,184]]",729,legacy_outputs/features_dinov3_global/lag_project/dinov3
+DINOv3 CLS global,tie-positive >=3/6,0.9081,0.9611,0.8327,0.9492,"[[448,24],[43,214]]",729,legacy_outputs/features_dinov3_global/lag_project/dinov3
+0.5 CLIP + 0.5 DINOv3 CLS,strict >=4/6,0.9355,0.9864,0.8327,0.9915,"[[468,4],[43,214]]",729,legacy_outputs/features_clip_dinov3cls_05_global/lag_project/clip_dinov3cls05
+0.5 CLIP + 0.5 DINOv3 CLS,tie-positive >=3/6,0.9506,0.9864,0.9105,0.9725,"[[459,13],[23,234]]",729,legacy_outputs/features_clip_dinov3cls_05_global/lag_project/clip_dinov3cls05
+BiomedCLIP global,strict >=4/6,0.8875,0.9613,0.7393,0.9682,"[[457,15],[67,190]]",729,legacy_outputs/features_biomedclip_global/lag_project/biomedclip
+BiomedCLIP global,tie-positive >=3/6,0.9150,0.9613,0.8638,0.9428,"[[445,27],[35,222]]",729,legacy_outputs/features_biomedclip_global/lag_project/biomedclip
+OpenCLIP ViT-H/14 global,strict >=4/6,0.9191,0.9716,0.8016,0.9831,"[[464,8],[51,206]]",729,legacy_outputs/features_openclip_h14_global/lag_project/openclip
+OpenCLIP ViT-H/14 global,tie-positive >=3/6,0.9369,0.9716,0.9105,0.9513,"[[449,23],[23,234]]",729,legacy_outputs/features_openclip_h14_global/lag_project/openclip
+OpenCLIP ViT-bigG/14 global,strict >=4/6,0.9204,0.9760,0.8288,0.9703,"[[458,14],[44,213]]",729,legacy_outputs/features_openclip_bigg14_global/lag_project/openclip
+OpenCLIP ViT-bigG/14 global,tie-positive >=3/6,0.9314,0.9760,0.9183,0.9386,"[[443,29],[21,236]]",729,legacy_outputs/features_openclip_bigg14_global/lag_project/openclip
+SigLIP2 SO400M global,strict >=4/6,0.9108,0.9694,0.7821,0.9809,"[[463,9],[56,201]]",729,legacy_outputs/features_siglip2_so400m_global/lag_project/siglip2
+SigLIP2 SO400M global,tie-positive >=3/6,0.9369,0.9694,0.8949,0.9597,"[[453,19],[27,230]]",729,legacy_outputs/features_siglip2_so400m_global/lag_project/siglip2
+MAE CLS global,strict >=4/6,0.8834,0.9487,0.7198,0.9725,"[[459,13],[72,185]]",729,legacy_outputs/features_mae_global/lag_project/mae
+MAE CLS global,tie-positive >=3/6,0.9053,0.9487,0.8327,0.9449,"[[446,26],[43,214]]",729,legacy_outputs/features_mae_global/lag_project/mae
+MAE mean-patch global,strict >=4/6,0.8326,0.9089,0.6420,0.9364,"[[442,30],[92,165]]",729,legacy_outputs/features_mae_global/lag_project/mae
+MAE mean-patch global,tie-positive >=3/6,0.8450,0.9089,0.7704,0.8856,"[[418,54],[59,198]]",729,legacy_outputs/features_mae_global/lag_project/mae

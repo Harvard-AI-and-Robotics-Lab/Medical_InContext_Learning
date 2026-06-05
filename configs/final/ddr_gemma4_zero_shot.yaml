@@ -1,0 +1,39 @@
+name: ddr_gemma4_zero_shot_final
+seed: 3407
+data_root: .
+output_root: outputs/final/ddr_gemma4_zero_shot_native
+output_file: predictions.json
+features_root: outputs/features
+
+inference:
+  client_backend: vllm
+  model: gemma4-31b-final
+  base_url: http://127.0.0.1:18002/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p:
+  max_tokens: 512
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 256
+  batch_delay: 0
+
+datasets:
+  - ddr
+
+methods:
+  - zero_shot
+
+manifest_csv: manifests/ddr_official_split.csv
+prompt_dataset_name: ddr
+
+batch_size: 256
+zero_shot_batch_size: 256
+k: 6
+prompt_suffix: 'Output only one compact JSON object. Include "label", "confidence" for confidence in the chosen DR grade, "probabilities" as a distribution over all six DDR grades, and "evidence" of eight words max. No markdown, no extra text.'
+prompt_suffix_methods:
+  - zero_shot

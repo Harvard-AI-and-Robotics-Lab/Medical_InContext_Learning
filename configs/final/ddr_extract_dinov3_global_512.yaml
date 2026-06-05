@@ -1,0 +1,24 @@
+name: extract_dinov3_global_ddr_512
+seed: 3407
+data_root: .
+output_root: outputs
+features_root: outputs/features_dinov3_global_ddr_512
+encoder:
+  name: dinov3
+  model_id: facebook/dinov3-vitl16-pretrain-lvd1689m
+  device: cuda
+  batch_size: 8
+  image_size: 512
+  normalize: true
+  return_spatial: false
+retrieval:
+  method: global
+  k: 6
+  similarity_metric: cosine
+  exclude_query: true
+  exclude_test_set: true
+datasets:
+- ddr
+methods:
+- rg_icl_global_similarity
+manifest_csv: manifests/ddr_official_split_crop_pad_512.csv

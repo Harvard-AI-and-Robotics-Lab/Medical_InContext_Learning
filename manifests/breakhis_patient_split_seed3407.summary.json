@@ -1,0 +1,62 @@
+{
+  "n_images": 7909,
+  "n_patients": 70,
+  "image_split_counts": {
+    "train": 5507,
+    "val": 1252,
+    "test": 1150
+  },
+  "patient_split_counts": {
+    "train": 49,
+    "test": 11,
+    "val": 10
+  },
+  "split_by_label": {
+    "adenosis": {
+      "test": 61,
+      "train": 383,
+      "val": 0
+    },
+    "ductal_carcinoma": {
+      "test": 607,
+      "train": 2478,
+      "val": 366
+    },
+    "fibroadenoma": {
+      "test": 68,
+      "train": 688,
+      "val": 258
+    },
+    "lobular_carcinoma": {
+      "test": 74,
+      "train": 429,
+      "val": 123
+    },
+    "mucinous_carcinoma": {
+      "test": 126,
+      "train": 576,
+      "val": 90
+    },
+    "papillary_carcinoma": {
+      "test": 90,
+      "train": 408,
+      "val": 62
+    },
+    "phyllodes_tumor": {
+      "test": 60,
+      "train": 158,
+      "val": 235
+    },
+    "tubular_adenoma": {
+      "test": 64,
+      "train": 387,
+      "val": 118
+    }
+  },
+  "magnification_counts": {
+    "100": 2081,
+    "200": 2013,
+    "40": 1995,
+    "400": 1820
+  }
+}

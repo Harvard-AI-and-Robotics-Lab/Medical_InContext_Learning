@@ -1,0 +1,34 @@
+{
+  "source_manifest": "manifests/ddr_official_split.csv",
+  "output_manifest": "manifests/ddr_official_split_crop_pad_512.csv",
+  "output_root": "data/processed/ddr_crop_pad_512",
+  "n_images": 13673,
+  "size": 512,
+  "threshold": 10,
+  "margin": 8,
+  "quality": 95,
+  "workers": 16,
+  "split_counts": {
+    "test": 4105,
+    "train": 6835,
+    "val": 2733
+  },
+  "label_counts": {
+    "mild_npdr": 630,
+    "moderate_npdr": 4477,
+    "no_dr": 6266,
+    "proliferative_dr": 913,
+    "severe_npdr": 236,
+    "ungradable": 1151
+  },
+  "crop_width_min_median_max": [
+    null,
+    null,
+    null
+  ],
+  "crop_height_min_median_max": [
+    null,
+    null,
+    null
+  ]
+}

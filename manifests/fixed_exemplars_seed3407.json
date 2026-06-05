@@ -1,0 +1,56 @@
+[
+  {
+    "id": "0984",
+    "label": 0,
+    "class_name": "non_glaucoma",
+    "image_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\non_glaucoma\\image\\0984.jpg",
+    "label_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\non_glaucoma\\label\\0984.txt",
+    "attention_map_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\non_glaucoma\\attention_map\\0984.jpg",
+    "split": "train"
+  },
+  {
+    "id": "1759",
+    "label": 1,
+    "class_name": "suspicious_glaucoma",
+    "image_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\image\\1759.jpg",
+    "label_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\label\\1759.txt",
+    "attention_map_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\attention_map\\1759.jpg",
+    "split": "train"
+  },
+  {
+    "id": "2216",
+    "label": 1,
+    "class_name": "suspicious_glaucoma",
+    "image_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\image\\2216.jpg",
+    "label_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\label\\2216.txt",
+    "attention_map_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\attention_map\\2216.jpg",
+    "split": "train"
+  },
+  {
+    "id": "2438",
+    "label": 1,
+    "class_name": "suspicious_glaucoma",
+    "image_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\image\\2438.jpg",
+    "label_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\label\\2438.txt",
+    "attention_map_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\attention_map\\2438.jpg",
+    "split": "train"
+  },
+  {
+    "id": "2443",
+    "label": 1,
+    "class_name": "suspicious_glaucoma",
+    "image_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\image\\2443.jpg",
+    "label_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\label\\2443.txt",
+    "attention_map_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\suspicious_glaucoma\\attention_map\\2443.jpg",
+    "split": "train"
+  },
+  {
+    "id": "4665",
+    "label": 0,
+    "class_name": "non_glaucoma",
+    "image_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\non_glaucoma\\image\\4665.jpg",
+    "label_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\non_glaucoma\\label\\4665.txt",
+    "attention_map_path": "E:\\In-Context-Learning\\Data\\LAG_database_part_1\\non_glaucoma\\attention_map\\4665.jpg",
+    "split": "train"
+  }
+]

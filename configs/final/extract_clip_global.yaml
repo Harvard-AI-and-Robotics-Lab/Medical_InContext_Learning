@@ -1,0 +1,28 @@
+name: extract_clip_global_lag
+seed: 3407
+data_root: data/LAG
+output_root: outputs
+features_root: outputs/features_clip_global
+
+encoder:
+  name: clip
+  model_id: openai/clip-vit-large-patch14
+  device: cuda
+  batch_size: 32
+  image_size: 224
+  normalize: true
+
+retrieval:
+  method: global
+  k: 6
+  similarity_metric: cosine
+  exclude_query: true
+  exclude_test_set: true
+
+datasets:
+  - lag_project
+
+methods:
+  - rg_icl_global_similarity
+
+manifest_csv: manifests/lag_manifest.csv

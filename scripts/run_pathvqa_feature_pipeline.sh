@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")/.."
+
+CLIP_GPU="${CLIP_GPU:-0}"
+DINO_GPU="${DINO_GPU:-1}"
+
+CUDA_VISIBLE_DEVICES="${CLIP_GPU}" \
+  python3 scripts/extract_features.py \
+    --config configs/final/pathvqa_extract_clip_global.yaml \
+    --datasets pathvqa \
+    --encoders clip
+
+CUDA_VISIBLE_DEVICES="${DINO_GPU}" \
+  python3 scripts/extract_features.py \
+    --config configs/final/pathvqa_extract_dinov3_global.yaml \
+    --datasets pathvqa \
+    --encoders dinov3
+
+python3 scripts/build_fused_features.py \
+  --feature-a outputs/features_clip_global_pathvqa/pathvqa/clip \
+  --feature-b outputs/features_dinov3_global_pathvqa/pathvqa/dinov3 \
+  --output-dir outputs/features_clip_dinov3cls_05_global_pathvqa/pathvqa/clip_dinov3cls05 \
+  --weight-a 0.5 \
+  --weight-b 0.5 \
+  --encoder-name clip_dinov3cls05

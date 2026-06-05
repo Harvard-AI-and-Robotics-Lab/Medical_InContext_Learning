@@ -1,0 +1,13 @@
+label,group,model,accuracy,auc,sensitivity,specificity,precision,f1,brier,ece,n,cm,color,note,source_run,source_method
+"Qwen3.6
+non-thinking
+CLIP",Qwen3.6,Qwen3.6,0.9272976680384087,0.9736035085405262,0.9105058365758755,0.9364406779661016,0.8863636363636364,0.8982725527831094,0.059781344307270216,0.06115226337448559,729,"[[442,30],[23,234]]",#F1DCA7,Non-thinking temp=0.7/top_p=0.8; not perfectly temperature-matched.,classification_qwen36_27b_vllm_clip_k6_global_similarity,rg_icl_global_similarity
+"Qwen3.6
+thinking
+CLIP",Qwen3.6,Qwen3.6,0.9163237311385459,0.964572479060872,0.8949416342412452,0.9279661016949152,0.8712121212121212,0.8829174664107485,0.06914910836762687,0.047887517146776394,729,"[[438,34],[27,230]]",#F5A623,Thinking budget 2048; temp=1.,classification_qwen36_27b_vllm_clip_k6_temp1_default_thinking_b2048_b256,rg_icl_global_similarity
+"Gemma4
+non-thinking
+CLIP",Gemma4,Gemma4,0.9245541838134431,0.9711592362988853,0.8793774319066148,0.9491525423728814,0.904,0.8915187376725839,0.06284636488340191,0.06227709190672158,729,"[[448,24],[31,226]]",#B7D8F0,Non-thinking temp=1.,classification_gemma4_31b_vllm_clip_k6_temp1_default_nonthinking,rg_icl_global_similarity
+"Gemma4
+thinking
+CLIP",Gemma4,Gemma4,0.9259259259259259,0.9646136978170547,0.9066147859922179,0.9364406779661016,0.8859315589353612,0.8961538461538462,0.06300713305898491,0.05478737997256518,729,"[[442,30],[24,233]]",#4F9BD9,Thinking budget 2048; temp=1.,classification_gemma4_31b_vllm_clip_k6_temp1_default_thinking_b2048_b256,rg_icl_global_similarity

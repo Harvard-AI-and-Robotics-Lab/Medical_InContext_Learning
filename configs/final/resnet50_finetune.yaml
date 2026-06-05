@@ -1,0 +1,28 @@
+name: resnet50_finetune_lag_final
+seed: 3407
+manifest_csv: manifests/lag_manifest.csv
+data_root: data/LAG
+output_dir: outputs/final/resnet50_lag_512_seed3407
+image_size: 512
+batch_size: 32
+epochs: 40
+patience: 8
+num_workers: 8
+backbone_lr: 0.00003
+head_lr: 0.001
+weight_decay: 0.0001
+
+command: >
+  python scripts/train_resnet50_lag.py
+  --manifest-csv manifests/lag_manifest.csv
+  --data-root data/LAG
+  --output-dir outputs/final/resnet50_lag_512_seed3407
+  --image-size 512
+  --batch-size 32
+  --epochs 40
+  --patience 8
+  --num-workers 8
+  --seed 3407
+  --backbone-lr 3e-5
+  --head-lr 1e-3
+  --weight-decay 1e-4

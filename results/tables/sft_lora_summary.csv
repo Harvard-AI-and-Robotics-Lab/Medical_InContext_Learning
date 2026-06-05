@@ -1,0 +1,13 @@
+Experiment,Split,Acc,Balanced Acc,AUC,N,Step,Epoch,Notes,Path
+Gemma4 base JSON prompt,val subset 200,0.7800,,0.8110,200,,,bf16; base model sanity,legacy_outputs/gemma4_base_json_prompt_val_subset100_bf16/metrics.json
+Gemma4 base label prompt,val subset 200,0.7750,,0.7750,200,,,bf16; base model sanity,legacy_outputs/gemma4_base_label_prompt_val_subset100_bf16/metrics.json
+Language LoRA JSON label-span r8,best val subset 200,0.7500,0.7500,0.8211,200,90,1,"early LoRA, val subset only",legacy_outputs/gemma4_lora_json_label_span_bf16_r8_seed3407/best_metrics.json
+Language LoRA JSON label-span r8,"test full, step90",0.6694,0.7075,0.7991,729,,,bad; overfit / weak SFT,legacy_outputs/gemma4_lora_json_label_span_bf16_r8_seed3407/test_step90_b8_predictions_metrics.json
+Language LoRA full-val fast uuid23,"best full val, step71",0.7582,0.7663,0.8237,728,71,1,language-decoder LoRA; best by full val accuracy,legacy_outputs/gemma4_lora_json_label_span_fullval3e_acc_nobal_fast_uuid23_seed3407/best_metrics.json
+Language LoRA full-val fast uuid23,"test full, step71",0.7353,0.7379,0.8065,729,,,"used for later SFT figure, but weak",legacy_outputs/gemma4_lora_json_label_span_fullval3e_acc_nobal_fast_uuid23_seed3407/step71_test_predictions_b4_metrics.json
+Vision-adapter LoRA full-val balanced bacc,"best full val, step213",0.7788,0.7760,0.8336,728,213,1,vision-adapter LoRA; selected by balanced accuracy,legacy_outputs/gemma4_vision_adapter_lora_json_label_span_fullval3e_balanced_bacc_top4_r8_seed3407/best_metrics.json
+Vision-adapter LoRA full-val balanced bacc,"test full, best manual projection",0.7366,0.7266,0.7992,729,,,also weak on test,legacy_outputs/gemma4_vision_adapter_lora_json_label_span_fullval3e_balanced_bacc_top4_r8_seed3407/test_best_manual_projection_predictions_metrics.json
+ResNet50 supervised,val_0p5,0.9808,,0.9978,728,,,ImageNet-pretrained ResNet50 fine-tuned on LAG train,legacy_outputs/resnet50_lag_512_seed3407/metrics.json
+ResNet50 supervised,val_youden,0.9835,,0.9978,728,,,ImageNet-pretrained ResNet50 fine-tuned on LAG train,legacy_outputs/resnet50_lag_512_seed3407/metrics.json
+ResNet50 supervised,test_0p5,0.9767,,0.9985,729,,,ImageNet-pretrained ResNet50 fine-tuned on LAG train,legacy_outputs/resnet50_lag_512_seed3407/metrics.json
+ResNet50 supervised,test_youden,0.9753,,0.9985,729,,,ImageNet-pretrained ResNet50 fine-tuned on LAG train,legacy_outputs/resnet50_lag_512_seed3407/metrics.json

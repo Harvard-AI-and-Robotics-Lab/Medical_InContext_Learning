@@ -1,0 +1,44 @@
+[
+  {
+    "id": "vqa_rad_train_000116_000116",
+    "split": "train",
+    "image_path": "data/processed/vqa_rad_320/train/vqa_rad_train_000116_000116.jpg",
+    "question": "is the liver cirrhotic?",
+    "answer": "yes"
+  },
+  {
+    "id": "vqa_rad_train_000858_000858",
+    "split": "train",
+    "image_path": "data/processed/vqa_rad_320/train/vqa_rad_train_000858_000858.jpg",
+    "question": "is bowel distension present?",
+    "answer": "no"
+  },
+  {
+    "id": "vqa_rad_train_000271_000271",
+    "split": "train",
+    "image_path": "data/processed/vqa_rad_320/train/vqa_rad_train_000271_000271.jpg",
+    "question": "how many ring enhancing lesions can be found in this image?",
+    "answer": "one"
+  },
+  {
+    "id": "vqa_rad_train_000677_000677",
+    "split": "train",
+    "image_path": "data/processed/vqa_rad_320/train/vqa_rad_train_000677_000677.jpg",
+    "question": "how do you determine cardiomegaly?",
+    "answer": "if the heart diameter is greater than half the diameter of the thoracic cavity."
+  },
+  {
+    "id": "vqa_rad_train_000440_000440",
+    "split": "train",
+    "image_path": "data/processed/vqa_rad_320/train/vqa_rad_train_000440_000440.jpg",
+    "question": "is this a chest radiograph?",
+    "answer": "yes"
+  },
+  {
+    "id": "vqa_rad_train_000825_000825",
+    "split": "train",
+    "image_path": "data/processed/vqa_rad_320/train/vqa_rad_train_000825_000825.jpg",
+    "question": "why is free air present in the image?",
+    "answer": "pneumothorax"
+  }
+]

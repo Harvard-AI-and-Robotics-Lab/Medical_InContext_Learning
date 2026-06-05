@@ -1,0 +1,24 @@
+name: extract_dinov3_global_breakhis_binary_mag200
+seed: 3407
+data_root: data/raw/BreaKHis_v1_extracted
+output_root: outputs
+features_root: outputs/features_dinov3_global_breakhis_binary_mag200
+encoder:
+  name: dinov3
+  model_id: facebook/dinov3-vitl16-pretrain-lvd1689m
+  device: cuda
+  batch_size: 16
+  image_size: 518
+  normalize: true
+  return_spatial: false
+retrieval:
+  method: global
+  k: 6
+  similarity_metric: cosine
+  exclude_query: true
+  exclude_test_set: true
+datasets:
+- breakhis_binary
+methods:
+- rg_icl_global_similarity
+manifest_csv: manifests/breakhis_binary_patient_split_seed3407_mag200.csv

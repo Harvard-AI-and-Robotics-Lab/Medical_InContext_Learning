@@ -1,0 +1,49 @@
+name: chexpert_qwen36_clip_top6_320_final
+seed: 3407
+data_root: .
+output_root: outputs/final/chexpert_qwen36_clip_top6_320
+output_file: predictions.json
+features_root: outputs/features
+inference:
+  client_backend: vllm
+  model: qwen36-27b-final
+  base_url: http://127.0.0.1:18003/v1
+  api_key_env: VLLM_API_KEY
+  temperature: 1.0
+  top_p: null
+  max_tokens: 1024
+  seed: 3407
+  response_format: json_object
+  enable_thinking: false
+  chat_template_kwargs:
+    enable_thinking: false
+  timeout: 3000
+  parallel_requests: 128
+  batch_delay: 0
+  image_max_side: 320
+  image_quality: 95
+retrieval:
+  k: 6
+datasets:
+- chexpert
+methods:
+- rg_icl_global_similarity
+manifest_csv: manifests/chexpert_official_split_320.csv
+fixed_exemplars_json: manifests/chexpert_fixed_exemplars_seed3407.json
+prompt_dataset_name: chexpert
+batch_size: 128
+zero_shot_batch_size: 128
+k: 6
+prompt_suffix: 'Output only one compact JSON object with exactly this schema: {"findings":{"no_finding":{"present":false,"probability":0.0},
+  "enlarged_cardiomediastinum":{"present":false,"probability":0.0}, "cardiomegaly":{"present":false,"probability":0.0},
+  "lung_opacity":{"present":false,"probability":0.0}, "lung_lesion":{"present":false,"probability":0.0},
+  "edema":{"present":false,"probability":0.0}, "consolidation":{"present":false,"probability":0.0},
+  "pneumonia":{"present":false,"probability":0.0}, "atelectasis":{"present":false,"probability":0.0},
+  "pneumothorax":{"present":false,"probability":0.0}, "pleural_effusion":{"present":false,"probability":0.0},
+  "pleural_other":{"present":false,"probability":0.0}, "fracture":{"present":false,"probability":0.0},
+  "support_devices":{"present":false,"probability":0.0}},"evidence":"eight words max"}.
+  No markdown, no extra text.'
+retrieval_features_dir: outputs/features_clip_global_chexpert_320_fast/chexpert/clip
+prompt_suffix_methods:
+- rg_icl_global_similarity
+- rg_icl_dual_global_similarity

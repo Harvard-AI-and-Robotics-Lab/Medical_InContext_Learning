@@ -1,0 +1,68 @@
+{
+  "seed": 3407,
+  "source_lists": {
+    "official_train": "TBX11K_train.txt",
+    "official_val_as_test": "TBX11K_val.txt",
+    "official_test": "not used because labels are unreleased"
+  },
+  "split_counts": {
+    "test": {
+      "TB": 200,
+      "healthy": 800,
+      "sick but non-TB": 800
+    },
+    "train": {
+      "TB": 510,
+      "healthy": 2550,
+      "sick but non-TB": 2550
+    },
+    "val": {
+      "TB": 90,
+      "healthy": 450,
+      "sick but non-TB": 450
+    }
+  },
+  "total_counts": {
+    "train": 5610,
+    "test": 1800,
+    "val": 990
+  },
+  "fixed_exemplars": [
+    {
+      "id": "tbx11k_official_train_tb1055",
+      "label": 2,
+      "label_name": "TB",
+      "image_path": "data/raw/TBX11K_extracted/TBX11K/imgs/tb/tb1055.png"
+    },
+    {
+      "id": "tbx11k_official_train_h2743",
+      "label": 0,
+      "label_name": "healthy",
+      "image_path": "data/raw/TBX11K_extracted/TBX11K/imgs/health/h2743.png"
+    },
+    {
+      "id": "tbx11k_official_train_s3050",
+      "label": 1,
+      "label_name": "sick but non-TB",
+      "image_path": "data/raw/TBX11K_extracted/TBX11K/imgs/sick/s3050.png"
+    },
+    {
+      "id": "tbx11k_official_train_h4495",
+      "label": 0,
+      "label_name": "healthy",
+      "image_path": "data/raw/TBX11K_extracted/TBX11K/imgs/health/h4495.png"
+    },
+    {
+      "id": "tbx11k_official_train_h0621",
+      "label": 0,
+      "label_name": "healthy",
+      "image_path": "data/raw/TBX11K_extracted/TBX11K/imgs/health/h0621.png"
+    },
+    {
+      "id": "tbx11k_official_train_tb0888",
+      "label": 2,
+      "label_name": "TB",
+      "image_path": "data/raw/TBX11K_extracted/TBX11K/imgs/tb/tb0888.png"
+    }
+  ]
+}

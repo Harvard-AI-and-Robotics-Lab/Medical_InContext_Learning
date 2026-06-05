@@ -1,0 +1,30 @@
+{
+  "n_images": 7909,
+  "n_patients": 70,
+  "split_counts": {
+    "test": 1150,
+    "train": 5507,
+    "val": 1252
+  },
+  "patient_split_counts": {
+    "train": 49,
+    "val": 10,
+    "test": 11
+  },
+  "label_counts": {
+    "test": {
+      "benign": 253,
+      "malignant": 897
+    },
+    "train": {
+      "benign": 1616,
+      "malignant": 3891
+    },
+    "val": {
+      "benign": 611,
+      "malignant": 641
+    }
+  },
+  "patient_leakage_n": 0,
+  "patient_leakage_ids": []
+}

@@ -1,0 +1,86 @@
+{
+  "source": "manifests/breakhis_patient_split_seed3407.csv",
+  "pooled_rows": 7909,
+  "magnifications": {
+    "40": {
+      "path": "manifests/breakhis_patient_split_seed3407_mag40.csv",
+      "rows": 1995,
+      "split_counts": {
+        "test": 285,
+        "train": 1371,
+        "val": 339
+      },
+      "label_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "patient_leakage": []
+    },
+    "100": {
+      "path": "manifests/breakhis_patient_split_seed3407_mag100.csv",
+      "rows": 2081,
+      "split_counts": {
+        "test": 308,
+        "train": 1440,
+        "val": 333
+      },
+      "label_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "patient_leakage": []
+    },
+    "200": {
+      "path": "manifests/breakhis_patient_split_seed3407_mag200.csv",
+      "rows": 2013,
+      "split_counts": {
+        "test": 292,
+        "train": 1422,
+        "val": 299
+      },
+      "label_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "patient_leakage": []
+    },
+    "400": {
+      "path": "manifests/breakhis_patient_split_seed3407_mag400.csv",
+      "rows": 1820,
+      "split_counts": {
+        "test": 265,
+        "train": 1274,
+        "val": 281
+      },
+      "label_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "patient_leakage": []
+    }
+  }
+}
